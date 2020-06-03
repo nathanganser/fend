@@ -18,6 +18,30 @@
  * 
 */
 
+/* Get the sections */
+const menu = document.querySelectorAll('section')
+
+/* Get the menu */
+const menu_items = document.getElementById("navbar__list")
+
+
+function createMenu () {
+for (let element of menu) {
+    /* Create each menu element */
+    menu_element =  document.createElement("li")
+    menu_element.className = "menu__link";
+    name = element.querySelector('h2').innerText
+    number = name[name.length -1]
+    menu_element.textContent = name
+    menu_element.setAttribute('href', `section${number}`)
+              
+    /* Append the sections to the menu */
+    menu_items.appendChild(menu_element)
+
+}
+}
+
+createMenu();
 
 /**
  * End Global Variables
